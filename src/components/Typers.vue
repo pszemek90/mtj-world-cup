@@ -2,7 +2,8 @@
     <div class="table-container">
         <ui-table class="table" :data="typers" :thead="head" :tbody="body" fullwidth sortIconAlignEnd>
 	        <template #country="{data}">
-		        <img class="flag" :src="getCountry(data.country)" v-tooltip="`${data.country}`" :aria-describedby="data.country"/>
+		        <img class="flag" :src="getCountry(data.country)" :aria-describedby="data.country"/>
+		        <ui-tooltip :id="data.country">{{data.country}}</ui-tooltip>
 	        </template>
         </ui-table>
     </div>
